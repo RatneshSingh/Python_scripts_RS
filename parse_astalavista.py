@@ -5,13 +5,13 @@ import sys
 import os.path
 
 def code_to_as(code):
-    if code == '0,1-2^' or code.startswith('0,1-2^'):
+    if code.startswith('0,1-2^'):
         astype='skipped_exon'
-    elif code == '0,1^2-' or code.startswith('0,1^2-'):
+    elif code.startswith('0,1^2-'):
         astype='retained_introns'
-    elif code == '1^,2^' or code.startswith('1^,2^'):
+    elif code.startswith('1^,2^'):
         astype='alt_donors'
-    elif code == '1-2^,3-4^' or code.startswith('1-2^,3-4^'):
+    elif code.startswith('1-2^,3-4^'):
         astype='mutually_exclusive_exons'
     elif code == '1-,2-':# or code.startswith('1-,2-'):
         astype='alt_acceptors'
